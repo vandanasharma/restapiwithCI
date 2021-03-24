@@ -82,5 +82,9 @@ class Posts extends Rest_Controller {
 	public function deletePost_delete(){
 
 	}
+	
+	public function updatePost_put(){
+
+	}
 
 }
