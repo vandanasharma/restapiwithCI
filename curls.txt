@@ -1,0 +1,95 @@
+1). PUT 
+ curl --location --request PUT 'http://localhost/assignment/restapiwithCI/index.php/Posts/createPost/' \
+--data-raw '{
+    "request": {
+        "header": {
+            "method": "post"
+        },
+        "body": {
+            "headline": "My love for spirituality explained",
+            "url": "https://www.abebooks.com/books/7-reasons-to-love-reading/index.shtml/",
+            "image": "https://isha.sadhguru.org/in/en/sadhguru/mystic",
+            "dateCreated": "2021-03-12 22:54:00",
+            "datePublished": "2021-03-24 22:54:00",
+            "inLanguage": "in-en",
+            "contentLocation": "Asia-Mumbai",
+            "authorId": "2",
+            "publisherId": "2",
+            "articleSection": "Spiritality",
+            "articleBody": "Our two eyes can capture the physical world, that which can block light, but are blind to all else. Only by opening the third eye can one perceive that which is seen and unseen. This is the realm of mysticism, of knowing life in its full depth and dimension. Sadhguru is a bridge into this mysterious arena of life. It is a homecoming, a settling back into yourself.",
+            "keywords": "Spiritality,sadguru,religion,isha",
+            "active": "1"
+        }
+    }
+}'
+
+---------------------------------
+
+2). PUT
+
+curl --location --request PUT 'http://localhost/assignment/restapiwithCI/index.php/Posts/updatePost/' \
+--data-raw '{
+    "request": {
+        "header": {
+            "method": "post"
+        },
+        "body": {
+            "postId":"80",
+            "headline": "My love for spirituality explained",
+            "url": "https://www.abebooks.com/books/7-reasons-to-love-reading/index.shtml/",
+            "image": "https://isha.sadhguru.org/in/en/sadhguru/mystic",
+            "dateCreated": "2021-03-12 22:54:00",
+            "datePublished": "2021-03-24 22:54:00",
+            "inLanguage": "in-en",
+            "contentLocation": "Asia-Mumbai",
+            "authorId": "2",
+            "publisherId": "2",
+            "articleSection": "Spiritality",
+            "articleBody": "Our two eyes can capture the physical world, that which can block light, but are blind to all else. Only by opening the third eye can one perceive that which is seen and unseen. This is the realm of mysticism, of knowing life in its full depth and dimension. Sadhguru is a bridge into this mysterious arena of life. It is a homecoming, a settling back into yourself.",
+            "keywords": "Spiritality,sadguru,religion,isha",
+            "active": "1"
+        }
+    }
+}
+------------------------------------------
+3). POST 
+curl --location --request POST 'http://localhost/assignment/restapiwithCI/index.php/Posts/fetchPostById/1' \
+--header 'Cookie: ci_session=974u34i4mu1m387up0ijc6lmvct2fl09' \
+--form 'Data="{
+  \"request\": {
+    \"header\": {
+      \"method\": \"post\"
+    },
+    \"body\": {
+      \"id\": \"1\"
+    }
+  }
+}"'
+
+------------------------------------------------------------------------
+4). GET
+curl --location --request GET 'http://localhost/assignment/restapiwithCI/index.php/Posts/getSelectedPost/1' \
+--header 'Cookie: ci_session=te4pf9rfvk703plmasutf6gh2j7r3idr' \
+--form 'Data="{
+  \"request\": {
+    \"header\": {
+      \"method\": \"post\"
+    },
+    \"body\": {
+      \"id\": \"1\"
+    }
+  }
+}"'
+
+----------------------------------------
+
+5). POST
+
+curl --location --request POST 'http://localhost/assignment/restapiwithCI/index.php/Posts/fetchAllPosts' \
+--header 'Cookie: ci_session=te4pf9rfvk703plmasutf6gh2j7r3idr'
+
+----------------------------------------
+6.) DELETE 
+
+curl --location --request DELETE 'http://localhost/assignment/restapiwithCI/index.php/Posts/deletePost/5' \
+--header 'Cookie: ci_session=te4pf9rfvk703plmasutf6gh2j7r3idr'
